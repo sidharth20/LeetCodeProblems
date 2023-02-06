@@ -1,15 +1,25 @@
 class Solution {
 public:
+    bool allZeroes(vector<int>& vec) {
+        for (int i = 0; i < 26; i++) {
+            if(vec[i] != 0)
+                return false;
+        }
+        return true;
+    }
+    
     bool isAnagram(string s, string t) {
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
-        
         if(s.size()!=t.size()) return false;
         
+        vector<int> v(26,0);
+        
         for(int i=0;i<s.size();i++){
-            if(s[i]!=t[i]) return false;
+            v[s[i]-'a']++;
+            v[t[i]-'a']--;
         }
         
-    return true;
+        if(allZeroes(v) == false)
+            return false;
+        return true;
     }
 };
