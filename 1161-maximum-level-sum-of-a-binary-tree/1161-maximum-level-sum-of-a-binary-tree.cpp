@@ -22,6 +22,7 @@ public:
             level++;
             int levelSum=0;
             for(int i=q.size();i>0;i--){
+            // for(int i=0;i<q.size();i++){ // this cannot be used as q.size() keeps on increasing
                 TreeNode* tmp= q.front();
                 q.pop();
                 levelSum += tmp->val;
