@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<string> buildArray(vector<int>& target, int n) {
-        int pointer = 0;
         vector<string> ans;
         int i=1;
         for(auto j: target){
